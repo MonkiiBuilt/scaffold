@@ -42,7 +42,7 @@ class Scaffold extends Command
      *
      * @var string
      */
-    protected $signature = 'scaffold:make';
+    protected $signature = 'scaffold:make {--verbose}';
 
     /**
      * The console command description.
@@ -214,27 +214,32 @@ class Scaffold extends Command
      */
     private function collectUserData()
     {
-        // Create migrations?
-        $this->createMigrations = $this->confirm('Create migrations?', $this->createMigrations);
+        $verbose = $this->option('verbose');
 
-        // Create models and model namespace.
-        $this->createModels = $this->confirm('Create models?', $this->createModels);
+        if($verbose) {
+          // Create migrations?
+          $this->createMigrations = $this->confirm('Create migrations?', $this->createMigrations);
 
-        if($this->createModels) {
+          // Create models and model namespace.
+          $this->createModels = $this->confirm('Create models?', $this->createModels);
+
+          if($this->createModels) {
             $this->modelNamespace = $this->ask('Model namespace', $this->modelNamespace);
 
             // Make sure the namespace has the correct slash in case the user got it wrong.
             $this->modelNamespace = str_replace('/', '\\', $this->modelNamespace);
-        }
+          }
 
-        // Create controllers and controller namespace.
-        $this->createControllers = $this->confirm('Create controllers?', $this->createControllers);
-        if($this->createControllers) {
+          // Create controllers and controller namespace.
+          $this->createControllers = $this->confirm('Create controllers?', $this->createControllers);
+          if($this->createControllers) {
             $this->controllerNamespace = $this->ask('Controller namespace', $this->controllerNamespace);
 
             // Make sure the namespace has the correct slash in case the user got it wrong.
             $this->controllerNamespace = str_replace('/', '\\', $this->controllerNamespace);
+          }
         }
+
     }
 
     /**
