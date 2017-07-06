@@ -1,0 +1,7 @@
+    /**
+     * Get the {{singularForeign}} that owns the {{singularSelf}}.
+     */
+    public function {{singularForeign}}()
+    {
+        return $this->belongsTo('App\{{SingularForeign}}');
+    }

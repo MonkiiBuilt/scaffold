@@ -1,0 +1,7 @@
+    /**
+     * Get the {{pluralForeign}} for the {{singularSelf}}.
+     */
+    public function {{pluralForeign}}()
+    {
+        return $this->hasMany('App\{{SingularForeign}}');
+    }

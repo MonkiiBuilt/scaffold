@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Models;
+
+use App\Models\Items\Image;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class {{Class}} extends Model
+{
+{{use}}
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = '{{table}}';
+
+    // This models fillable properties
+    protected $fillable = [
+        {{fillable}}
+    ];
+
+{{relationships}}
+}

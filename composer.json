@@ -1,0 +1,12 @@
+{
+    "name": "monkiibuilt/scaffold",
+    "description": "Quickly generate migrations, models and controllers from a php array describing your tables.",
+    "authors": [
+        {
+            "name": "Felix Eve",
+            "email": "felix@monkii.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

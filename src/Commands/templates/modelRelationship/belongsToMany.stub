@@ -1,0 +1,7 @@
+    /**
+     * The {{pluralForeign}} that belong to the {{singularSelf}}.
+     */
+    public function {{pluralForeign}}()
+    {
+        return $this->belongsToMany('App\{{SingularForeign}}');
+    }

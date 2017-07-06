@@ -1,0 +1,7 @@
+    /**
+     * Get the {{singularForeign}} record associated with the {{singularSelf}}.
+     */
+    public function {{singularForeign}}()
+    {
+        return $this->hasOne('App\{{SingularForeign}}');
+    }
